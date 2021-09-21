@@ -46,12 +46,18 @@ For the following questions, assume the attacking pokemon chooses the move that 
 
 To make our battles more interesting, we need to measure the effectiveness of a Pokémon's type against another Pokémon. Here, we create a function `type_effectiveness_against(attack_type, defender)`. This function takes a Pokémon's type(like Fire or Water) and a defending Pokémon(like Pikachu) and measures the type's effectiveness against the defending Pokémon. 
 
-This function retrieves Type I and Type II of the defending Pokemon. The effectiveness of the attack_type is measured against each type of the defender using `get_type_effectiveness` which you used in Lab P4. These values are multiplied if the has a 2nd Type(i.e. not "None").
+This function retrieves Type I and Type II of the defending Pokémon. The effectiveness of the attack_type is measured against each type of the defender using `get_type_effectiveness` which you used in Lab P4. These values are multiplied if the has a 2nd Type(i.e. not "None").
 
-For example,
+For example, let the attack_type be Fire and the defender be the Pokémon Bulbasaur. Bulbasaur has 2 types, those being Grass and Poison respectively.
+```
+>>> project.get_type_effectiveness("Fire", "Grass")
+2.0
+>>> project.get_type_effectiveness("Fire", "Poison")
+1.0
+```
+Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulbasaur as the product of project.get_type_effectiveness("Fire", "Grass") and project.get_type_effectiveness("Fire", "Poison").
 
-```
-```
+**Some Pokémon have only one type. In this case, we simply return the effectiveness of the attack_type against the defender's Type I**
 
 We've provided the code for this function below:
 ```
