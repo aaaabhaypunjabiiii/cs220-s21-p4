@@ -146,3 +146,17 @@ def battle(pkmn1, pkmn2):
 
 ## #Q10: What is the output of battle('Krabby', 'Scraggy')?
 ## #Q11: What is the output of battle('Charizard', 'Turtonator')?
+
+You may have noticed that the function battle does not quite follow all the rules that we laid out at the beginning. Look at the output of `battle('Raichu', 'Crobat')`. You will find that it is a draw, since they can both take 4 hits from the other Pokémon. But since Crobat has a higher Speed, it attacks first, so it will land its fourth hit on Raichu, before Raichu can hit Crobat. So, even though they both go down in the same number of moves, Crobat should win the battle.
+
+Go back and modify battle() so that if both Pokémon faint in the same number of moves, the Pokémon with the higher Speed wins. If they both have the same Speed, then the battle should be a 'Draw'.
+
+## #Q12: What is the output of battle('Starly', 'Pidgey')?
+## #Q13: What is the output of battle('Bulbasaur', 'Spearow')?
+
+One last rule we need to implement is the run away feature. It is more reasonable to compare the number of hits a Pokémon can take instead of total stats in deciding whether it should run away. For example, consider a battle between Pikachu and Glaceon. Since Glaceon can take 13 hits from Pikachu, but Pikachu can only take 2 hits from Glaceon, Pikachu should run away from this battle.
+
+Modify battle() so that if abs(num_hits_pkmn1_can_take - num_hits_pkmn2_can_take) > 10, the function returns <pkmn_name> ran away'. Make sure the function says the Pokémon that can take less hits ran away!
+
+## #Q14: What is the output of battle('Glaceon', 'Pikachu')?
+## #Q15: What is the output of battle('Meditite', 'Gyarados')?
