@@ -44,4 +44,18 @@ For the following questions, assume the attacking pokemon chooses the move that 
 ## #Q1: How much damage does Scraggy do to Tranquill?
 ## #Q2: How much damage does Gulpin do to Nidorina?
 
+To make our battles more interesting, we need to measure the effectiveness of a Pokémon's type against another Pokémon. Here, we create a function `type_effectiveness_against(attack_type, defender)`. This function takes a Pokémon's type(like Fire or Water) and a defending Pokémon(like Pikachu) and measures the type's effectiveness against the defending Pokémon. 
 
+This function retrieves Type I and Type II of the defending Pokemon. The effectiveness of the attack_type is measured by multiplying the type effectiveness of an attack type with each defending type. 
+
+We've provided the code for this function below:
+````
+def type_effectiveness_against(attack_type, defender):
+    defender_type1 = ???
+    defender_type2 = ???
+    bonus = 1
+    bonus *= project.get_type_effectiveness(attack_type, defender_type1)
+    if ???:
+        bonus *= project.get_type_effectiveness(attack_type, defender_type2)
+    return bonus
+```
