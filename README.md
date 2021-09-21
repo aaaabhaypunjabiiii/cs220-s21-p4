@@ -40,5 +40,6 @@ def original_damage(attacker, defender):
 For the following questions, assume the attacking pokemon chooses the move that does the most damage:
 
 ## #Q1: How much damage does Scraggy do to Tranquill?
+## #Q2: How much damage does Gulpin do to Nidorina?
 
-## ##Q2: How much damage does Gulpin do to Nidorina?
+
