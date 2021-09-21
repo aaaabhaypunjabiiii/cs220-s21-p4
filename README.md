@@ -58,4 +58,5 @@ def type_effectiveness_against(attack_type, defender):
     if ???:
         bonus *= project.get_type_effectiveness(attack_type, defender_type2)
     return bonus
+
 ```
