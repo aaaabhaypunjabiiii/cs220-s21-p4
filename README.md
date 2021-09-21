@@ -63,5 +63,4 @@ def type_effectiveness_against(attack_type, defender):
     if ???:
         ???
     return bonus
-
 ```
