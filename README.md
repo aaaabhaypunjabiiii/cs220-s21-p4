@@ -95,7 +95,7 @@ We need to compare the type effectiveness (of each type) of the attacker with th
  `effective damage(attacker) = original_damage(attacker,defender) * type with the higher type_effectiveness_against the defending Pokemon.`
  
  To illustrate this, we take Weedle as the attacker and Charizard as the defender.
- If your `type_effectiveness_against` function works correctly the values obtained by measuring the type effectiveness of Mewtwo against Gengar is 
+ If your `type_effectiveness_against` function works correctly the values obtained by measuring the type effectiveness of Weedle against Charizard is 
  
 ```
 >>> type_effectiveness_against(project.get_type1("Weedle"), "Charizard")
