@@ -9,7 +9,7 @@ Find any issues? Report to us:
 
 ## Learning Objectives
 
-In this project, you will walk through how to
+In this project, you will learn how to
 
   * Use conditional statements to write programs with more complicated logic
   * Practice writing more functions
