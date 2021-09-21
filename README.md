@@ -20,3 +20,15 @@ This project consists of writing code to answer 20 questions. If you're answerin
 
 In this project, you will have to write several functions and keep adding more details to them according to the instructions. When you are adding more things in your functions, we want you to follow the Good Coding Style for Functions described in Lab P4. Therefore, you should only keep the latest version of your functions in your notebook file. For example, in P4 you are asked to write 6 functions(`original_damage`, `type_effectiveness_against`, `effective_damage`, `num_hits`, `battle`, and `two_on_two_battle`), so there should only be the latest version of these 6 functions in your submitted notebook file.
 
+## Questions and Functions
+
+For the first few questions, we will calculate the damage caused by a Pokémon on another Pokémon. To accomplish this, we need to create a function `original_damage(attacker, defender)`. The code for this function is provided below:
+```
+def original_damage(attacker, defender):
+    physical_damage = 10 * project.get_attack(attacker) / project.get_defense(defender)
+    special_damage = 10 * project.get_sp_atk(attacker) / project.get_sp_def(defender)
+    if physical_damage >= special_damage:
+        return physical_damage
+    else:
+        return special_damage
+```
