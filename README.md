@@ -59,7 +59,7 @@ Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulb
 
 `bonus = project.get_type_effectiveness("Fire", "Grass") * project.get_type_effectiveness("Fire", "Poison")`
 
-**Some Pokémon only have one type (their second type is "None"). In this case, we simply return the effectiveness of the attack_type against the defender's Type I**
+**Some Pokémon only have one type (their second type is "None"). In this case, we simply return the effectiveness of the attack_type against the defender's first type (Type I)**
 
 We've provided the code for this function below:
 ```
