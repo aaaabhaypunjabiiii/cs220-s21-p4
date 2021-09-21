@@ -49,7 +49,7 @@ To make our battles more interesting, we need to measure the effectiveness of a 
 This function retrieves Type I and Type II of the defending Pokemon. The effectiveness of the attack_type is measured by multiplying the type effectiveness of an attack type with each defending type. 
 
 We've provided the code for this function below:
-````
+```
 def type_effectiveness_against(attack_type, defender):
     defender_type1 = ???
     defender_type2 = ???
