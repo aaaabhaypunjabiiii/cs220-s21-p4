@@ -55,8 +55,9 @@ For example, let the attack_type be Fire and the defender be the Pokémon Bulbas
 >>> project.get_type_effectiveness("Fire", "Poison")
 1.0
 ```
-Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulbasaur as the product of `project.get_type_effectiveness("Fire", "Grass")` and `project.get_type_effectiveness("Fire", "Poison")`. In other words,
+Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulbasaur as the product of `project.get_type_effectiveness("Fire", "Grass")` and `project.get_type_effectiveness("Fire", "Poison")`. 
 
+In other words,
 `bonus = project.get_type_effectiveness("Fire", "Grass") * project.get_type_effectiveness("Fire", "Poison")`
 
 **Some Pokémon only have one type (their second type is "None"). In this case, we simply return the effectiveness of the attack_type against the defender's first type (Type I). You'll need to check if the defender has a second type before calculating the type effectiveness.**
@@ -84,7 +85,7 @@ This function is responsible for taking the attacker's type effectiveness into c
 
 We need to compare the type effectiveness (of each type) of the attacker with the defending Pokemon. The effective damage produced by the attacker is given by:
 
- `effective damage(attacker) = original_damage(attacker,defender) * the Type with the higher type_effectiveness_against the defending Pokemon.`
+ `effective damage(attacker) = original_damage(attacker,defender) * type with the higher type_effectiveness_against the defending Pokemon.`
  
  To illustrate this, we take Weedle as the attacker and Charizard as the defender.
  If your `type_effectiveness_against` function works correctly the values obtained by measuring the type effectiveness of Mewtwo against Gengar is 
@@ -149,15 +150,40 @@ def battle(pkmn1, pkmn2):
 
 You may have noticed that the function battle does not quite follow all the rules that we laid out at the beginning. Look at the output of `battle('Raichu', 'Crobat')`. You will find that it is a draw, since they can both take 4 hits from the other Pokémon. But since Crobat has a higher Speed, it attacks first, so it will land its fourth hit on Raichu, before Raichu can hit Crobat. So, even though they both go down in the same number of moves, Crobat should win the battle.
 
-Go back and modify battle() so that if both Pokémon faint in the same number of moves, the Pokémon with the higher Speed wins. If they both have the same Speed, then the battle should be a 'Draw'.
+Go back and modify `battle()` so that if both Pokémon faint in the same number of moves, the Pokémon with the higher Speed wins. If they both have the same Speed, then the battle should be a 'Draw'.
 
 ## #Q12: What is the output of battle('Starly', 'Pidgey')?
 ## #Q13: What is the output of battle('Bulbasaur', 'Spearow')?
 
 One last rule we need to implement is the run away feature. It is more reasonable to compare the number of hits a Pokémon can take instead of total stats in deciding whether it should run away. For example, consider a battle between Pikachu and Glaceon. Since Glaceon can take 13 hits from Pikachu, but Pikachu can only take 2 hits from Glaceon, Pikachu should run away from this battle.
 
-Modify battle() so that if abs(num_hits_pkmn1_can_take - num_hits_pkmn2_can_take) > 10, the function returns <pkmn_name> ran away'. Make sure the function says the Pokémon that can take less hits ran away!
+Modify `battle()` so that if `abs(num_hits_pkmn1_can_take - num_hits_pkmn2_can_take) > 10`, the function returns `<pkmn_name> ran away'`. Make sure the function says the Pokémon that can take less hits ran away!
 
 ## #Q14: What is the output of battle('Glaceon', 'Pikachu')?
 ## #Q15: What is the output of battle('Meditite', 'Gyarados')?
 ## #Q16: What is the output of battle('Mudkip', 'Gulpin')?
+
+The essence of the Pokemon anime comes in the form of beautifully animated team battles. To simulate this feature, we will create a simple 2 v/s 2 game where 2 teams with 2 Pokemon each compete in a battle.
+
+The function `two_on_two_battle(pkmn1, pkmn2, pkmn3, pkmn4)` takes 4 Pokemon. Pokemon 1 and 2 are in Team A while Pokemon 3 and 4 are on Team B are in Team B. 
+
+In the first round, Pokemon 1 and 3 battle each other and Pokemon 2 and 4 battle each other. Your function should use the 'battle(pkmn1,pkmn2)' function to evaluate the result of each battle. 
+
+**If either battle results in a "Draw" or in either Pokemon running away, your function should return "Cannot Battle".**
+
+If the winning Pokemon are both from the same team, in other words, either Pokemon 1 and 2 win their battles, your function should return "Team A wins". Similarly if Pokemon 3 and 4 win their battles, your function should return "Team B wins".
+
+## #Q17: What is the output of two_on_two_battle('Gulpin', 'Nidorina', 'Wooper', 'Charmeleon')?
+## #Q18: What is the output of two_on_two_battle("Magnemite", "Sableye", "Tranquill", "Chimchar")?
+
+There can be battles when the winning Pokemon from the first round are from different teams. For example Pokemon 2 can win its battle against Pokemon 4 but Pokemon 1 can be defeated by Pokemon 3.
+
+In this case, we take the remaining Pokemon from opposing team and allow them to battle one last time. Here, we take Pokemon 2 and 3 and allow them to battle. The victor of this battle takes the battle for its team. If Pokemon 2 were to win this battle, your function should return "Team A wins". Conversely, if Pokemon 3 defeats Pokemon 2, your function should return "Team B wins"
+
+**Again, if the battle results in a "Draw" or in either Pokemon running away, your function should return "Cannot Battle".
+
+## #Q19: What is the output of two_on_two_battle("Bellsprout", "Latias", "Golem", "Arcanine")?
+## #Q20: What is the output of two_on_two_battle('Solrock', 'Pidgey', 'Starly', 'Charmeleon')?
+
+**READ ME: Please remember to Kernel->Restart and Run All to check for errors, save your notebook, then run the test.py script one more time before submitting the project. To keep your code concise, please remove your own testing code that does not influence the correctness of answers.
+Finally, if you are unable to solve a question and have partial code that is causing an error when running test.py, please comment out the lines in the cell for that question before submitting your file. Failing to do so will cause the auto-grader to fail when you submit your file, giving you 0 points even if you have some questions correctly answered.**
