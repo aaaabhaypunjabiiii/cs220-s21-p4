@@ -55,9 +55,11 @@ For example, let the attack_type be Fire and the defender be the Pokémon Bulbas
 >>> project.get_type_effectiveness("Fire", "Poison")
 1.0
 ```
-Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulbasaur as the product of project.get_type_effectiveness("Fire", "Grass") and project.get_type_effectiveness("Fire", "Poison").
+Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulbasaur as the product of `project.get_type_effectiveness("Fire", "Grass")` and `project.get_type_effectiveness("Fire", "Poison")`. In other words,
 
-**Some Pokémon have only one type. In this case, we simply return the effectiveness of the attack_type against the defender's Type I**
+`bonus = project.get_type_effectiveness("Fire", "Grass") * project.get_type_effectiveness("Fire", "Poison")`
+
+**Some Pokémon only have one type (their second type is "None"). In this case, we simply return the effectiveness of the attack_type against the defender's Type I**
 
 We've provided the code for this function below:
 ```
