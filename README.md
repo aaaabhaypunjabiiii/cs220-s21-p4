@@ -77,3 +77,38 @@ Use this function to answer the next 2 questions.
 
 ## #Q3: How effective is Electric type against Magikarp?
 ## #Q4: How effective is Bug type against Gastly?
+
+Upon glancing at `original_damage(attacker, defender)`, we observe that the type effectiveness of each Pokemon is ignored. To resolve this and add a layer of depth to our battles, we create `effective_damage(attacker, defender)`. 
+
+This function is responsible for taking the attacker's type effectiveness into consideration with the damage it causes to a defending Pokemon.
+
+We need to compare the type effectiveness (of each type) of the attacker with the defending Pokemon. The effective damage produced by the attacker is given by:
+
+ `effective damage(attacker) = original_damage(attacker,defender) * the Type with the higher type_effectiveness_against the defending Pokemon.`
+ 
+ To illustrate this, we take Weedle as the attacker and Charizard as the defender.
+ If your `type_effectiveness_against` function works correctly the values obtained by measuring the type effectiveness of Mewtwo against Gengar is 
+ 
+```
+>>> type_effectiveness_against(project.get_type1("Weedle"), "Charizard")
+0.25
+>>> type_effectiveness_against(project.get_type2("Weedle"), "Charizard")
+1.0
+```
+Clearly, Weedle's second type or Poison causes more damage to Charizard than its first type or Bug.
+We take the greater value of the 2 and multiply it by the original_damage(attacker,defender)
+
+Similar to the previous function, some attacking Pokemon do not have a second type(i.e. their second type is "None"). Your code needs to check if the second type of the attacker is "None" and proceed accordingly. If the second type is "None" we simply return the effectiveness of the first type * the original_damage(attacker,defender)
+
+The code for this function is provided below.
+
+```
+def effective_damage(attacker, defender):
+    attacker_type1 = ???
+    attacker_type2 = ???
+    bonus = type_effectiveness_against(attacker_type1, defender)
+    if ???:
+        if ???:
+            ???
+    return bonus * ???
+```
