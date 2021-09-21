@@ -1,5 +1,12 @@
 # Project 4: Pokémon Simulation
 
+## Corrections and Clarifications
+
+Find any issues? Report to us:
+
+  * Abhay Punjabi [apunjabi@wisc.edu](mailto:apunjabi@wisc.edu)
+  * Brian Huang [thuang273@wisc.edu](mailto:thuang273@wisc.edu)
+
 ## Learning Objectives
 
 In this project, you will walk through how to
@@ -184,6 +191,8 @@ In this case, we take the remaining Pokemon from opposing team and allow them to
 
 ## #Q19: What is the output of two_on_two_battle("Bellsprout", "Latias", "Golem", "Arcanine")?
 ## #Q20: What is the output of two_on_two_battle('Solrock', 'Pidgey', 'Starly', 'Charmeleon')?
+
+That will be all for now. If you are interested, you can make your battle functions as complicated as you want. You can even try a 3 on 3 battle to test your coding prowess thus far! 
 
 **READ ME: Please remember to Kernel->Restart and Run All to check for errors, save your notebook, then run the test.py script one more time before submitting the project. To keep your code concise, please remove your own testing code that does not influence the correctness of answers.
 Finally, if you are unable to solve a question and have partial code that is causing an error when running test.py, please comment out the lines in the cell for that question before submitting your file. Failing to do so will cause the auto-grader to fail when you submit your file, giving you 0 points even if you have some questions correctly answered.**
