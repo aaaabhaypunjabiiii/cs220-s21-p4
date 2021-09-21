@@ -160,3 +160,4 @@ Modify battle() so that if abs(num_hits_pkmn1_can_take - num_hits_pkmn2_can_take
 
 ## #Q14: What is the output of battle('Glaceon', 'Pikachu')?
 ## #Q15: What is the output of battle('Meditite', 'Gyarados')?
+## #Q16: What is the output of battle('Mudkip', 'Gulpin')?
