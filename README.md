@@ -59,7 +59,7 @@ Since Bulbasaur has 2 types, we calculate the effectiveness of Fire against Bulb
 
 `bonus = project.get_type_effectiveness("Fire", "Grass") * project.get_type_effectiveness("Fire", "Poison")`
 
-**Some Pokémon only have one type (their second type is "None"). In this case, we simply return the effectiveness of the attack_type against the defender's first type (Type I)**
+**Some Pokémon only have one type (their second type is "None"). In this case, we simply return the effectiveness of the attack_type against the defender's first type (Type I). You'll need to check if the defender has a second type before calculating the type effectiveness.**
 
 We've provided the code for this function below:
 ```
@@ -112,3 +112,37 @@ def effective_damage(attacker, defender):
             ???
     return bonus * ???
 ```
+## #Q5: How much damage does Mewtwo do to Gengar?
+
+## #Q6: How much damage does Wooper do to Charmeleon?
+
+## #Q7: How much damage does Slowpoke do to Metapod?
+
+Now that we have a way of calculating the damage done by the Pokémon during battle, we have to calculate how many hits each Pokémon can take before fainting.
+
+The number of hits a Pokemon can take is calulated by taking its HP and dividing it by the attacking Pokemon's **effective damage**. 
+
+**Hint: If the defending pokemon has 30 HP and the attacking pokemon does 20 damage each turn, it will take 2 turns before the defender faints instead of 30 / 20 = 1.5. You might want to use the method math.ceil() here. First import the module math and then look up the documentation of math.ceil to see how you could use it.**
+
+Copy/paste the following code in a new cell of your notebook and fill in the details.
+
+```
+def num_hits(attacker, defender):
+    return math.ceil(project.get_hp(???)/???)
+```
+
+## #Q8: How many hits can Cottonee take from Wooper?
+
+## #Q9: How many hits can Charmeleon take from Pikachu?
+
+With the tools we have created so far, we can now finally create a battle simulator. Copy/paste the following code in a new cell of your notebook and fill in the details.
+
+```
+def battle(pkmn1, pkmn2):
+    #TODO: Return the name of the pkmn that can take more hits from the other
+    # pkmn. If both pkmn faint within the same number of moves, return the
+    # string 'Draw'
+```
+
+## #Q10: What is the output of battle('Krabby', 'Scraggy')?
+## #Q11: What is the output of battle('Charizard', 'Turtonator')?
