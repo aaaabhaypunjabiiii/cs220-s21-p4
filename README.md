@@ -22,13 +22,23 @@ In this project, you will have to write several functions and keep adding more d
 
 ## Questions and Functions
 
-For the first few questions, we will calculate the damage caused by a Pokémon on another Pokémon. To accomplish this, we need to create a function `original_damage(attacker, defender)`. The code for this function is provided below:
+For the first few questions, we will calculate the damage caused by a Pokémon on another Pokémon. To accomplish this, we need to create a function `original_damage(attacker, defender)`. The damage caused by a Pokémon's Physical move is `10 * Attack stat of Attacker / Defense stat of Defender`, and the damage caused by a Pokémon's Special move is `10 * Sp. Atk. stat of Attacker / Sp. Def. stat of Defender`
+
+If a Pokémon wants to win, it should always choose the move which will do more damage. 
+
+Copy/paste the following code in a new cell of your notebook and fill in the details.
+
 ```
 def original_damage(attacker, defender):
     physical_damage = 10 * project.get_attack(attacker) / project.get_defense(defender)
-    special_damage = 10 * project.get_sp_atk(attacker) / project.get_sp_def(defender)
-    if physical_damage >= special_damage:
+    special_damage = ???
+    if ???:
         return physical_damage
     else:
-        return special_damage
+        return ???
 ```
+For the following questions, assume the attacking pokemon chooses the move that does the most damage:
+
+## #Q1: How much damage does Scraggy do to Tranquill?
+
+## ##Q2: How much damage does Gulpin do to Nidorina?
