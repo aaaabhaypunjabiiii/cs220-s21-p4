@@ -72,3 +72,8 @@ def type_effectiveness_against(attack_type, defender):
         ???
     return bonus
 ```
+
+Use this function to answer the next 2 questions.
+
+## #Q3: How effective is Electric type against Magikarp?
+## #Q4: How effective is Bug type against Gastly?
