@@ -22,9 +22,11 @@ In this project, you will have to write several functions and keep adding more d
 
 ## Questions and Functions
 
-For the first few questions, we will calculate the damage caused by a Pokémon on another Pokémon. To accomplish this, we need to create a function `original_damage(attacker, defender)`. The damage caused by a Pokémon's Physical move is `10 * Attack stat of Attacker / Defense stat of Defender`, and the damage caused by a Pokémon's Special move is `10 * Sp. Atk. stat of Attacker / Sp. Def. stat of Defender`
+For the first few questions, we will calculate the damage caused by a Pokémon on another Pokémon. To accomplish this, we need to create a function `original_damage(attacker, defender)`. 
 
-If a Pokémon wants to win, it should always choose the move which will do more damage. 
+The damage caused by a Pokémon's Physical move is `10 * Attack stat of Attacker / Defense stat of Defender`, and the damage caused by a Pokémon's Special move is `10 * Sp. Atk. stat of Attacker / Sp. Def. stat of Defender`
+
+**If a Pokémon wants to win, it should always choose the move which will do more damage.**
 
 Copy/paste the following code in a new cell of your notebook and fill in the details.
 
